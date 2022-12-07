@@ -29,7 +29,7 @@ function ex4(){
 function ex5(){
     const frutas = ["Banana", " Laranja", " Maçã", " Manga"];
     y = prompt("Digite uma fruta:");
-    frutas.push(" y");
+    frutas.push( y);
     alert(frutas);
 }
 
