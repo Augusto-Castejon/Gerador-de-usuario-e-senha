@@ -49,8 +49,8 @@ function ex9(){
 }
 
 function ex10(){
-    x = prompt("Digite algo e veja Diminuir:");
-    alert(x.toLowercase());
+    x = prompt("Digite algo e veja diminuir:");
+    alert(x.toLowerCase());
 }
 
 function typeWrite(elemento){
