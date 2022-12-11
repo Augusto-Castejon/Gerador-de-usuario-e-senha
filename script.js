@@ -48,6 +48,11 @@ function ex9(){
     alert("Hoje é " + (dia[i]));
 }
 
+function ex10(){
+    x = prompt("Digite algo e veja Diminuir:");
+    alert(x.toLowercase());
+}
+
 function typeWrite(elemento){
     const textoArray = elemento.innerHTML.split('');
     elemento.innerHTML = ' ';
