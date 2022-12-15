@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 :root {
     --cor-secund-bott: rgb(0, 0, 0);
 }
@@ -10,6 +12,10 @@ body {
     background-color: #c2c2cc;
 }
 
+h2 {
+    font-family: 'Playfair Display', serif;
+}
+
 table {
     width: 70%;
 }
@@ -18,7 +24,7 @@ table {
     display: flex;
     max-width: 480px;
     margin: 30px 0px 15px 0px;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Playfair Display', serif;
     color: rgb(0, 0, 0);
 }
 .titulo-principal:after{
