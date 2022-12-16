@@ -27,31 +27,35 @@ function ex4(){
 }
 
 function ex5(){
-    const fru = ["27", " 126", " 49", " 51"];
-    y = prompt("Digite um número:");
-    fru.push(" " + y);
-    alert(fru);
-}
-
-function ex6(){
     let i = new Date().getDay();
     const dia = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"]
     alert("Hoje é " + (dia[i]) + "!");
 }
 
-function ex7(){
+function ex6(){
     alert("Você está no mês " + (new Date().getMonth()+1) + "!")
 }
 
-
-function ex8(){
-    x = prompt("Digite algo e veja crescer:");
+function ex7(){
+    x = prompt("Digite algo para ficar maiúsculo:");
     alert(x.toUpperCase());
 }
 
-function ex9(){
-    x = prompt("Digite algo e veja diminuir:");
+function ex8(){
+    x = prompt("Digite algo para ficar minúsculo:");
     alert(x.toLowerCase());
+}
+
+function ex9() {
+    const frase = prompt("Apenas as primeiras letras vão ser maiúsculas:");
+    const palavras = frase.split(" ");
+    
+    for (let i = 0; i < palavras.length; i++) {
+        palavras[i] = palavras[i][0].toUpperCase() + palavras[i].toLowerCase().substr(1);
+    }
+    
+    alert(palavras.join(" "));
+
 }
 
 function typeWrite(elemento){
