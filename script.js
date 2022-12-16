@@ -8,7 +8,7 @@ function ex1(){
 }
 
 function ex2(){
-    x = prompt("Digite algum nome ou frase e descubra quantas letras tem:");
+    x = prompt("Digite algo e descubra quantas letras tem:");
     alert("O nome tem " + x.length + " letras.");
 }
 
@@ -27,28 +27,29 @@ function ex4(){
 }
 
 function ex5(){
-    const frutas = ["Banana", " Laranja", " Maçã", " Manga"];
-    y = prompt("Digite uma fruta:");
-    frutas.push( y);
-    alert(frutas);
+    const fru = ["27", " 126", " 49", " 51"];
+    y = prompt("Digite um número:");
+    fru.push(" " + y);
+    alert(fru);
 }
 
 function ex6(){
+    let i = new Date().getDay();
+    const dia = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"]
+    alert("Hoje é " + (dia[i]) + "!");
+}
+
+function ex7(){
+    alert("Você está no mês " + (new Date().getMonth()+1) + "!")
+}
+
+
+function ex8(){
     x = prompt("Digite algo e veja crescer:");
     alert(x.toUpperCase());
 }
 
-function ex7(){
-    alert("Você está no mês " + (new Date().getMonth()+1))
-}
-
 function ex9(){
-    let i = new Date().getDay();
-    const dia = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"]
-    alert("Hoje é " + (dia[i]));
-}
-
-function ex10(){
     x = prompt("Digite algo e veja diminuir:");
     alert(x.toLowerCase());
 }
