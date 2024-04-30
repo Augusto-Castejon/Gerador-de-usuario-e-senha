@@ -1,73 +1,93 @@
-function ex1(){
-    let x = prompt("Digite um valor para ser fatorado:");
-    let fat = x;
-    for(let i = 1 ; i < fat; i++) {
-        x *= i;
+// Função para capitalizar a primeira letra de cada palavra
+function capitalizarNome(nome) {
+    return nome
+        .toLowerCase() // Primeiro, transforme tudo para minúsculo
+        .split(" ") // Divida por espaço
+        .map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1)) // Capitalize a primeira letra
+        .join(" "); // Junte novamente com espaços
+}
+
+function gerarUsuarioESenha() {
+    const nomeCompletoRaw = document.getElementById("nome-completo").value.trim();
+
+    if (!nomeCompletoRaw) {
+        alert("Por favor, insira um nome completo.");
+        return;
     }
-    alert(x);
-}
 
-function ex2(){
-    x = prompt("Digite algo e descubra quantas letras tem:");
-    alert("O nome tem " + x.length + " letras.");
-}
+    const nomeCompleto = capitalizarNome(nomeCompletoRaw);
 
-function ex3(){
-    x = prompt("Qual o nome do menino que foi preso em uma casa de doces:");
-    if(x==='João')
-        alert("Correto!");
-    else
-        alert("Incorreto!");
-}
-
-function ex4(){
-    let y = prompt("Digite um número de 1 a 5, cada um mostrará uma ciade:");
-    const city = ["Goiania", "Rio de Janeiro", "Belo Horizonte", "Uberaba", "São Paulo"];
-    alert(city[y]);
-}
-
-function ex5(){
-    let i = new Date().getDay();
-    const dia = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"]
-    alert("Hoje é " + (dia[i]) + "!");
-}
-
-function ex6(){
-    alert("Você está no mês " + (new Date().getMonth()+1) + "!")
-}
-
-function ex7(){
-    x = prompt("Digite algo para ficar maiúsculo:");
-    alert(x.toUpperCase());
-}
-
-function ex8(){
-    x = prompt("Digite algo para ficar minúsculo:");
-    alert(x.toLowerCase());
-}
-
-function ex9() {
-    const frase = prompt("Apenas as primeiras letras vão ser maiúsculas:");
-    const palavras = frase.split(" ");
-    
-    for (let i = 0; i < palavras.length; i++) {
-        palavras[i] = palavras[i][0].toUpperCase() + palavras[i].toLowerCase().substr(1);
+    // Dividindo o nome completo para obter o primeiro e o último nome
+    const nomes = nomeCompleto.split(" ");
+    if (nomes.length < 2) {
+        alert("Por favor, insira pelo menos um primeiro e um último nome.");
+        return;
     }
-    
-    alert(palavras.join(" "));
 
+    const primeiroNome = nomes[0].toLowerCase();
+    const ultimoNome = nomes[nomes.length - 1].toLowerCase();
+    const nomeDeUsuario = `${primeiroNome}.${ultimoNome}`;
+
+    const senha = gerarSenhaAleatoria();
+
+    const resultado = `
+        Nome completo:<br>
+        ${nomeCompleto}<br><br>
+        Usuário:<br>
+        ${nomeDeUsuario}<br><br>
+        Senha sugerida:<br>
+        ${senha}
+    `;
+
+    document.getElementById("resultado").innerHTML = resultado;
 }
 
-function typeWrite(elemento){
+function gerarSenhaAleatoria() {
+    // Funções para gerar caracteres aleatórios
+    function letraMaiuscula() {
+        const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        return letras.charAt(Math.floor(Math.random() * letras.length));
+    }
+
+    function letrasMinusculas(quantidade) {
+        const letras = "abcdefghijklmnopqrstuvwxyz";
+        let resultado = "";
+        for (let i = 0; i < quantidade; i++) {
+            resultado += letras.charAt(Math.floor(Math.random() * letras.length));
+        }
+        return resultado;
+    }
+
+    function caractereEspecial() {
+        const especiais = "!@#*_.";
+        return especiais.charAt(Math.floor(Math.random() * especiais.length));
+    }
+
+    function numeros(quantidade) {
+        const digitos = "0123456789";
+        let resultado = "";
+        for (let i = 0; i < quantidade; i++) {
+            resultado += digitos.charAt(Math.floor(Math.random() * digitos.length));
+        }
+        return resultado;
+    }
+
+    // Gerando a senha na ordem especificada
+    const senha = `${letraMaiuscula()}${letrasMinusculas(3)}${caractereEspecial()}${numeros(4)}`;
+    
+    return senha;
+}
+
+// Função para animação de digitação
+function typeWrite(elemento) {
     const textoArray = elemento.innerHTML.split('');
     elemento.innerHTML = ' ';
-    textoArray.forEach(function(letra, i){   
-      
-    setTimeout(function(){
-        elemento.innerHTML += letra;
-    }, 75 * i)
-
-  });
+    textoArray.forEach((letra, i) => {
+        setTimeout(() => {
+            elemento.innerHTML += letra;
+        }, 75 * i);
+    });
 }
+
 const titulo = document.querySelector('.titulo-principal');
 typeWrite(titulo);

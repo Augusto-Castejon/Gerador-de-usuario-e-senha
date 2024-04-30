@@ -6,41 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <title>Exemplos</title>
+    <title>Gerador de Usuário e Senha</title>
 </head>
 <body>
     <h2> Inicio de JS</h2>
-    <h3 class="titulo-principal"> Alguns exemplos:</h3>
-    <nav id="exemplos">
-        <table>
-            <tr>
-                <td><p>E1 - Fatoração:</p>
-                <button type="button" onclick="ex1()">E1</button></td>
-                <td><p>E2 - Contador de letras:</p>
-                <button type="button" onclick="ex2()">E2</button></td>
-                <td><p>E3 - Responda corretamente:</p>
-                <button type="button" onclick="ex3()">E3</button></td>
-            </tr>
-            <tr>
-                <td><p>E4 - Cada número é uma cidade:</p>
-                <button type="button" onclick="ex4()">E4</button></td>
-                <td><p>E5 - Que dia é hoje?</p>
-                <button type="button" onclick="ex5()">E5</button></td>
-                <td><p>E6 - Em que mês estou?</p>
-                <button type="button" onclick="ex6()">E6</button></td>
-            </tr>
-            <tr>    
-                <td><p>E7 - Para maiúsculo:</p>
-                <button type="button" onclick="ex7()">E7</button></td>
-                <td><p>89 - Para minúsculo:</p>
-                <button type="button" onclick="ex8()">E8</button></td>
-                <td><p>E9 - Para primeira letra maiúscula:</p>
-                <button type="button" onclick="ex9()">E9</button></td>
-            </tr>
-        </table>
-    </nav>
-    <br>
-    <script src="script.js"></script>
+    <h3 class="titulo-principal">Gerador de Usuário e Senha</h3>
+    <h3>Insira o nome completo do usuário:</h3>
+    <input type="text" id="nome-completo" placeholder="Digite o nome do usuário">
+    <button onclick="gerarUsuarioESenha()">Gerar Usuário e Senha</button>
+    <p id="resultado"></p>
     
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,63 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* Defina algumas variáveis para a paleta de cores */
 :root {
-    --cor-secund-bott: rgb(0, 0, 0);
+    --cor-primaria: #2a2a2a; /* Cor escura para texto */
+    --cor-secundaria: #585858; /* Cor para elementos secundários */
+    --cor-fundo: #a9adb4a4; /* Cor para fundo da página */
+    --cor-acento: #3498db; /* Cor para destaques (botões, etc.) */
 }
 
+/* Estilos globais */
 * {
-    padding: 0.5%;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #c4c4cfdc;
+    background-color: var(--cor-fundo);
+    font-family: 'Roboto', sans-serif; /* Fonte para texto normal */
+    margin: 0;
+    padding: 20px; /* Espaçamento ao redor da página */
 }
 
 h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif; /* Fonte para títulos */
+    color: var(--cor-primaria);
 }
 
-table {
-    width: 80%;
+h3 {
+    color: var(--cor-primaria);
 }
 
-td {
-    vertical-align: bottom;
-}
-
-.titulo-principal{
-    display: flex;
-    max-width: 480px;
-    margin: 30px 0px 15px 0px;
-    font-family: 'Playfair Display', serif;
-    color: rgb(0, 0, 0);
-}
-.titulo-principal:after{
- content: '|';
- margin-left: 5px;
- opacity: 1;
- animation: pisca .7s infinite;
-}
-
-#exemplos {
-    display: flex;
-    height: auto;
-    width: auto;
-}
-
-#exemplos button {
-    padding: 4px 16px;
-    cursor: pointer;
-    border: 2px solid rgba(70, 70, 70, 0.589);
+input {
+    border: 2px solid var(--cor-secundaria);
     border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    max-width: 400px; /* Limite de largura para campos de entrada */
 }
 
-
-@keyframes pisca{
-    0%, 100%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 0;
-    }
+button {
+    background-color: var(--cor-acento);
+    color: #fff; /* Texto branco para botões */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; /* Botões maiores para facilidade de uso */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transição suave para interações */
 }
 
+button:hover {
+    background-color: #2980b9; /* Cor mais escura ao passar o mouse */
+}
+
+p {
+    color: var(--cor-primaria);
+    white-space: pre-line; /* Para manter quebras de linha */
+}
+
+#resultado {
+    margin-top: 20px; /* Espaçamento para a seção de resultados */
+    font-family: 'Roboto', sans-serif; /* Fonte para texto normal */
+}
